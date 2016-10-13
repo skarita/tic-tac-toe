@@ -12,7 +12,8 @@ body {
 }
 
 h1 {
-  font: 1em arial;
+  font-family: "Arial Black";
+  font: 1em;
   padding: 0.2em;
 }
 

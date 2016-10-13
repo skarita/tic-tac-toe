@@ -1,43 +1,10 @@
-var first = document.getElementById('first');
-// first.addEventListener('click', function() {
-//   first.textContent = 'X';
-// });
-//
-// var second = document.getElementById('second');
-
 var playerOne = true;
 var board = document.getElementById('board');
 var winnerFound = false;
 var playerXScore = 0;
 var playerOScore = 0;
 
-board.addEventListener('click', function(event) {
-  console.log(event);
-
-  // if there is a piece already on event.target, return false;
-  // if (event.target.textContent = 'O' || 'X')
-  // return false;
-  // update board
-  if (playerOne) {
-    event.target.textContent = 'X';
-    playerOne = false;
-  } else {
-    event.target.textContent = 'O';
-    playerOne = true;
-  }
-  // switch players
-  // if (playerOne) {
-  //   playerOne = false;
-  // } else {
-  //   playerOne = true;
-  // }
-
-  // check for wins
-  checkWin();
-});
-
-var board = [0, 0, 0, 0, 0, 0, 0, 0, 0,];
-// var labels= 'abcdefghi';
+// Possible winning combinations
 var wins = [
   [first, second, third],
   [fourth, fifth, sixth],
@@ -49,10 +16,40 @@ var wins = [
   [third, fifth, seventh]
 ];
 
+// add event listener to the board
+board.addEventListener('click', function(event) {
+  if (winnerFound === false) {
+
+
+
+    if (!$(event.target).hasClass('empty')) {
+        return false;
+    }
+    // update board and switch players
+    if (playerOne) {
+      event.target.textContent = 'X';
+      // $(event.target).addClass('X');
+      $(event.target).removeClass('empty');
+      playerOne = false;
+    } else {
+      event.target.textContent = 'O';
+      // $(event.target).addClass('O');
+      $(event.target).removeClass('empty');
+      playerOne = true;
+    }
+    // check for wins
+    checkWin();
+
+  }
+});
+
+// function to check if winner has been found
 function checkWin() {
 
   // if there are no empty spaces, then its a draw!
-
+  if ($('#board div').hasClass('empty') === false) {
+    document.getElementById('won').innerHTML = "It's a tie!";
+  }
   // return 'draw';
 
   for (var i = 0; i < wins.length; i++) {
@@ -75,16 +72,25 @@ function checkWin() {
   }
 }
 
+// Function which clears the board
 var clearBoard = function(event) {
   var clearSquares = document.getElementsByClassName('inGame');
   for (var i = 0; i < clearSquares.length; i++) {
     clearSquares[i].innerHTML = '';
+    $('.inGame').addClass('empty');
     winnerFound = false;
+    document.getElementById('won').innerHTML = 'show winner';
+
   }
 };
 
+// Button that calls the clear board function which resets to new game
 var newGame = document.getElementById("reset");
 reset.addEventListener('click', clearBoard);
+
+
+// var board = [0, 0, 0, 0, 0, 0, 0, 0, 0,];
+// var labels= 'abcdefghi';
 
 // function isWinner(board) {
 //   for (var i = 0; i < wins.length; i++) {
@@ -100,38 +106,3 @@ reset.addEventListener('click', clearBoard);
 //   }
 //   return false;
 // }
-
-// var getWinner = function() {
-//   if (winnerIs('x')) {
-//     return 'x';
-//   }
-//   if (winnerIs('o')) {
-//     return 'o';
-//   }
-//   return null;
-// };
-//
-// var winnerIs = function(player) {
-//   return winsRow(player) || winsColumn(player) || winsDiagonal(player);
-// };
-//
-// var winsRow = function(player) {
-//   return allThree(player, cells('a'), cells('b'), cells('c')) ||
-//          allThree(player, cells('d'), cells('e'), cells('f')) ||
-//          allThree(player, cells('g'), cells('h'), cells('i'));
-// };
-//
-// var winsColumn = function(player) {
-//   return allThree(player, cells('a'), cells('d'), cells('g')) ||
-//          allThree(player, cells('b'), cells('e'), cells('h')) ||
-//          allThree(player, cells('c'), cells('f'), cells('i'));
-// };
-//
-// var winsDiagonal = function(player) {
-//   return allThree(player, cells('a'), cells('e'), cells('i')) ||
-//          allThree(player, cells('c'), cells('e'), cells('g'));
-// };
-//
-// var allThree = function(player, cellOne, cellTwo, cellThree) {
-//   return (cellOne === player) && (cellTwo === player) && (cellThree === player);
-// };
