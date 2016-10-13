@@ -20,8 +20,6 @@ var wins = [
 board.addEventListener('click', function(event) {
   if (winnerFound === false) {
 
-
-
     if (!$(event.target).hasClass('empty')) {
         return false;
     }
