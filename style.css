@@ -1,26 +1,65 @@
 body {
-  -webkit-boxing-sizing: border-box;
+  font-family: "Arial Black";
+  /*-webkit-boxing-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  box-sizing: border-box;*/
+  margin: 0 auto;
 }
 
 .wrapper {
-  width: 390px;
+  width: 365px;
   margin: 0 auto;
   text-align: center;
   color: #333;
+  margin: 0 auto;
 }
 
 h1 {
   font-family: "Arial Black";
-  font: 1em;
-  padding: 0.2em;
+  font: 1.4em;
 }
 
 #board div {
-  width: 128px;
-  height: 128px;
+  width: 118px;
+  height: 118px;
   float: left;
   border: 1px solid black;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 48px;
+  vertical-align: top;
+  line-height: 120px;
 
+  /*display: inline-block;;
+
+  background-color: white;
+  box-sizing: border-box*/
+}
+
+.button {
+  height: 32px;
+  width: 100px;
+  margin-bottom 2px;
+  background-color: #FF604A;
+  color: black;
+  font-family: "Arial Black";
+
+}
+
+.winner {
+  font-size: 2em;
+  font-weight: 850;
+  display: block;
+  margin: 20px auto;
+  color: #FF4926;
+}
+/*#board {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}*/
+
+span {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0 auto;
 }

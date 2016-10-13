@@ -28,11 +28,13 @@ board.addEventListener('click', function(event) {
     // update board and switch players
     if (playerOne) {
       event.target.textContent = 'X';
+      event.target.style.backgroundColor = '#FF68A8';
       // $(event.target).addClass('X');
       $(event.target).removeClass('empty');
       playerOne = false;
     } else {
       event.target.textContent = 'O';
+      event.target.style.backgroundColor = '#4AF9F8';
       // $(event.target).addClass('O');
       $(event.target).removeClass('empty');
       playerOne = true;
@@ -63,6 +65,7 @@ function checkWin() {
       playerXScore += 1;
       document.getElementById('playerXScore').innerHTML = playerXScore;
 
+
     } else if (combo === 'OOO') {
       document.getElementById('won').innerHTML = 'Player O wins!';
       winnerFound = true;
@@ -79,8 +82,8 @@ var clearBoard = function(event) {
     clearSquares[i].innerHTML = '';
     $('.inGame').addClass('empty');
     winnerFound = false;
-    document.getElementById('won').innerHTML = 'show winner';
-
+    document.getElementById('won').innerHTML = '';
+    clearSquares[i].style.backgroundColor = 'white';
   }
 };
 

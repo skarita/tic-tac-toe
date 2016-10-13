@@ -12,16 +12,11 @@
     <div class="heading">
       <h1>Tic Tac Toe</h1>
     </div>
-      <div id="players">
-        <div id="O">Player O
-          <p id="playerOScore"></p>
-        </div>
-        <div id="X">Player X
-          <p id="playerXScore"></p>
-        </div>
+
+      <div id="result">
         <input type="button" class="button" id="reset" value="New Game">
       </div>
-      <div class="winner" id="won"> Show winner </div>
+      <div class="winner" id="won"> </div>
       <div id="board">
         <div id="first" class="inGame empty">
         </div>
@@ -42,6 +37,17 @@
         <div id="ninth" class="inGame empty">
         </div>
       </div>
+      <aside>
+      <div id="players">
+          <div id="X"><h3>Player X: </h3>
+            <span id="playerXScore"></span>
+            <div id="O">
+          <h3>Player O: </h3>
+            <span id="playerOScore"></span>
+          </div>
+          </div>
+        </div>
+        </aside>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <script src="tictactoe.js"></script>
