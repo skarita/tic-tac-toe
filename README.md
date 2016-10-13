@@ -7,7 +7,7 @@ Tic-tac-toe also known as noughts and crosses is a game for two players, X and O
 * Javascript
 
 ### Tic-Tac-Toe on browser
-[Check it out on browser] (skarita.github.io/tic-tac-toe/)
+[Check it out on browser](skarita.github.io/tic-tac-toe/)
 
 ### Approach taken
 Planned simple user interface for the game.
