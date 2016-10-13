@@ -81,7 +81,7 @@ var clearBoard = function(event) {
     $('.inGame').addClass('empty');
     winnerFound = false;
     document.getElementById('won').innerHTML = '';
-    clearSquares[i].style.backgroundColor = 'white';
+    clearSquares[i].style.backgroundColor = '#6B9796';
   }
 };
 
