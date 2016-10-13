@@ -26,13 +26,13 @@ board.addEventListener('click', function(event) {
     // update board and switch players
     if (playerOne) {
       event.target.textContent = 'X';
-      event.target.style.backgroundColor = '#FF68A8';
+      event.target.style.backgroundColor = '#d2b29b';
       // $(event.target).addClass('X');
       $(event.target).removeClass('empty');
       playerOne = false;
     } else {
       event.target.textContent = 'O';
-      event.target.style.backgroundColor = '#4AF9F8';
+      event.target.style.backgroundColor = '#7dd0b6';
       // $(event.target).addClass('O');
       $(event.target).removeClass('empty');
       playerOne = true;

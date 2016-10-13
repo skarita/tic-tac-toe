@@ -1,4 +1,9 @@
 body {
+  background: url('images/texture-wallpaper-31.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% cover;
+  background-position center;
+
   font-family: "Arial Black";
   /*-webkit-boxing-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -40,7 +45,7 @@ h1 {
   height: 32px;
   width: 100px;
   margin-bottom 2px;
-  background-color: #FF604A;
+  background-color: #e38690;
   color: black;
   font-family: "Arial Black";
 
@@ -51,7 +56,7 @@ h1 {
   font-weight: 850;
   display: block;
   margin: 20px auto;
-  color: #FF4926;
+  color: #965251;
 }
 /*#board {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); 0 6px 20px 0 rgba(0, 0, 0, 0.19);
