@@ -14,4 +14,4 @@ Planned simple user interface for the game.
 Broke down the problem into smaller sections and worked on getting the game logic working right on javascript.
 Once the game was working good enough, ie. it shows a message when a winner is found, adds the wins to counter, resets the board, etc.
 I added some styles to the interface.
-Lastly made the user interface responsive.
+Last goal is to make it site responsive.
