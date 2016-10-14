@@ -14,4 +14,6 @@ Planned simple user interface for the game.
 Broke down the problem into smaller sections and worked on getting the game logic working right on javascript.
 Once the game was working good enough, ie. it shows a message when a winner is found, adds the wins to counter, resets the board, etc.
 I added some styles to the interface.
-Last goal is to make it site responsive.
+Other goals is to have customisable options, animation, creative styles and twists.
+
+![tic-tac-toe]("images/Tic-tac-toe-Doodle.jpg" width="300")

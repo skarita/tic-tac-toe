@@ -4,6 +4,35 @@ var winnerFound = false;
 var playerXScore = 0;
 var playerOScore = 0;
 
+// add event listener to the board
+board.addEventListener('click', function(event) {
+  if (winnerFound === false) {
+    // Clicking on square with piece does nothing
+    if (!$(event.target).hasClass('empty')) {
+        return false;
+    }
+    // update board and switch players
+    if (playerOne) {
+      // write X on square clicked
+      event.target.textContent = 'X';
+      // added background color to the square clicked
+      event.target.style.backgroundColor = '#d2b29b';
+      // $(event.target).addClass('X');
+      // removed the class 'empty' from the div clicked
+      $(event.target).removeClass('empty');
+      playerOne = false;
+    } else {
+      event.target.textContent = 'O';
+      event.target.style.backgroundColor = '#7dd0b6';
+      // $(event.target).addClass('O');
+      $(event.target).removeClass('empty');
+      playerOne = true;
+    }
+    // call checkWin function
+    checkWin();
+  }
+});
+
 // Possible winning combinations
 var wins = [
   [first, second, third],
@@ -15,54 +44,25 @@ var wins = [
   [first, fifth, ninth],
   [third, fifth, seventh]
 ];
-
-// add event listener to the board
-board.addEventListener('click', function(event) {
-  if (winnerFound === false) {
-
-    if (!$(event.target).hasClass('empty')) {
-        return false;
-    }
-    // update board and switch players
-    if (playerOne) {
-      event.target.textContent = 'X';
-      event.target.style.backgroundColor = '#d2b29b';
-      // $(event.target).addClass('X');
-      $(event.target).removeClass('empty');
-      playerOne = false;
-    } else {
-      event.target.textContent = 'O';
-      event.target.style.backgroundColor = '#7dd0b6';
-      // $(event.target).addClass('O');
-      $(event.target).removeClass('empty');
-      playerOne = true;
-    }
-    // check for wins
-    checkWin();
-
-  }
-});
-
 // function to check if winner has been found
 function checkWin() {
-
   // if there are no empty spaces, then its a draw!
   if ($('#board div').hasClass('empty') === false) {
     document.getElementById('won').innerHTML = "It's a tie!";
   }
-  // return 'draw';
-
+// loops through the array of winning combinations
   for (var i = 0; i < wins.length; i++) {
     var combo = '';
-    for (var O = 0; O < wins[i].length; O++) {
-      combo += wins[i][O].innerHTML;
+    for (var j = 0; j < wins[i].length; j++) {
+      combo += wins[i][j].innerHTML;
     }
     if (combo === 'XXX') {
+      // Writes player X wins to the dom
       document.getElementById('won').innerHTML = 'Player X wins!';
       winnerFound = true;
       playerXScore += 1;
+      // Keeps score by adding each win to player X
       document.getElementById('playerXScore').innerHTML = playerXScore;
-
 
     } else if (combo === 'OOO') {
       document.getElementById('won').innerHTML = 'Player O wins!';
@@ -88,22 +88,3 @@ var clearBoard = function(event) {
 // Button that calls the clear board function which resets to new game
 var newGame = document.getElementById("reset");
 reset.addEventListener('click', clearBoard);
-
-
-// var board = [0, 0, 0, 0, 0, 0, 0, 0, 0,];
-// var labels= 'abcdefghi';
-
-// function isWinner(board) {
-//   for (var i = 0; i < wins.length; i++) {
-//     var a, b, c;
-//     // these variable become what the board is holding 'x', 'o', or 0
-//     a = board[wins[i][0]];
-//     b = board[wins[i][1]];
-//     c = board[wins[1][2]];
-//
-//     if(a == b && a == c && a !== 0) {
-//       return a;
-//     }
-//   }
-//   return false;
-// }

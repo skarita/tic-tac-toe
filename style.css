@@ -3,12 +3,11 @@ body {
   background-repeat: no-repeat;
   background-size: 100% cover;
   background-position center;
-
   font-family: "Arial Black";
+  margin: 0 auto;
   /*-webkit-boxing-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;*/
-  margin: 0 auto;
 }
 
 .wrapper {
@@ -34,9 +33,7 @@ h1 {
   font-size: 48px;
   vertical-align: top;
   line-height: 120px;
-
   /*display: inline-block;;
-
   background-color: white;
   box-sizing: border-box*/
 }
@@ -44,27 +41,37 @@ h1 {
 .button {
   height: 32px;
   width: 100px;
-  margin-bottom 2px;
+  margin-bottom: 2px;
   background-color: #e38690;
   color: black;
   font-family: "Arial Black";
-
 }
 
 .winner {
-  font-size: 2em;
+  font-size: 1.6em;
   font-weight: 850;
   display: block;
   margin: 20px auto;
   color: #965251;
 }
+
+.X {
+  clear: both;
+  margin-top: 10px;
+}
+
+#playerXScore {
+  font-size: 1.2em;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+#playerOScore {
+  font-size: 1.2em;
+  margin: 0 auto;
+  padding: 0 auto;
+}
 /*#board {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }*/
-
-span {
-  display: inline-block;
-  margin: 0 auto;
-  padding: 0 auto;
-}
