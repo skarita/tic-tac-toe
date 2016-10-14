@@ -16,4 +16,4 @@ Once the game was working good enough, ie. it shows a message when a winner is f
 I added some styles to the interface.
 Other goals is to have customisable options, animation, creative styles and twists.
 
-![tic-tac-toe]("images/Tic-tac-toe-Doodle.jpg" width="300")
+![tic-tac-toe](http://previews.123rf.com/images/pozitiw/pozitiw1211/pozitiw121100152/16516172-Tic-tac-toe-Doodle-style-Stock-Vector.jpg)
